@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .root{
+            --main-radius:15px;
+            --main-padding:15px;
+        }
+        body{
+            /* background-color: blanchedalmond; */
+            font-family: cursive;
+            font-weight:bold;
+        }
+        .container{
+            display: grid;
+            height: 80vh;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
+            grid-template-areas:
+             "nav nav nav nav"
+             "sidebar main main main"
+             "sidebar content1 content2 content3"
+             "sidebar footer footer footer";
+             grid-gap: 0.2rem ;
+             font-weight: 500;
+             text-transform: uppercase;
+             color: #d50c0c;
+             text-align: center;
+
+        }
+        nav{
+            background-color: aquamarine;
+            grid-area:nav ;
+            border-radius: var(--main-radius);
+            padding-top: var(--main-padding);
+        }
+        main{
+            background-color: rgb(64, 114, 222);
+            grid-area: main;
+            border-radius: var(--main-radius);
+            padding-top: var(--main-padding);
+        }
+        #sidebar{
+            background-color: blue;
+            grid-area: sidebar;
+            border-radius: var(--main-radius);
+            padding-top: var(--main-padding);
+        }
+        #content1{
+            background-color: rgb(20, 221, 51);
+            grid-area: content1;
+            border-radius: var(--main-radius);
+            padding-top: var(--main-padding);
+        }
+        #content2{
+            background-color: rgb(182, 215, 64);
+            grid-area: content2;
+            border-radius: var(--main-radius);
+            padding-top: var(--main-padding);
+        }
+        #content3{
+            background-color: rgb(209, 16, 189);
+            grid-area: content3;
+            border-radius: var(--main-radius);
+            padding-top: var(--main-padding);
+        }
+        footer{
+            background-color: rgb(232, 134, 6);
+            grid-area: footer;
+            border-radius: var(--main-radius);
+            padding-top: var(--main-padding);   
+        }
+         @media only screen and (max-width:620px){
+            .container{
+                grid-template-columns: 1fr;
+                grid-template-rows: 80fr 40fr 30fr 20fr 20fr 20fr 40fr;
+                grid-template-areas: 
+               " nav"
+               " sidebar"
+                "main"
+                "content1"
+                "content2"
+                "content3"
+                "footer"               
+            }
+        }
+        
+        @media only screen and (max-width:550px){
+            .container{
+                grid-template-columns: 1fr;
+                grid-template-rows: 0.4fr 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr;
+                grid-template-areas: 
+               " nav"
+               " sidebar"
+                "main"
+                "content1"
+                "content2"
+                "content3"
+                "footer"               
+            } 
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>navbar</nav>
+        <main>main</main>
+        <div id="sidebar">sidebar</div>
+        <div id="content1">content1</div>
+        <div id="content2">content2</div>
+        <div id="content3">content3</div>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>
